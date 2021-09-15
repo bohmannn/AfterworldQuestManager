@@ -6,11 +6,12 @@ using Xamarin.Forms;
 
 namespace AfterworldQuestManager.ViewModels
 {
-    [QueryProperty(nameof(id), nameof(id))]
+    [QueryProperty(nameof(ItemId), nameof(ItemId))]
     public class ItemDetailViewModel : BaseViewModel
     {
 
-        private int id;
+        private string itemId;
+        private string id;
         private string desc;
         private string reqSuccess;
         private string reqFail;
@@ -29,14 +30,24 @@ namespace AfterworldQuestManager.ViewModels
         private string success;
         private string fail;
 
-        public int Id
+        public string SaveCommandText;
+
+
+        public string ItemId
         {
-            get => id;
+            get => itemId;
             set
             {
-                id = value;
+
+                itemId = value;
                 LoadItemId(value);
             }
+        }
+
+        public string Id
+        {
+            get => id;
+            set => SetProperty(ref id, value);
         }
 
         public string Desc
@@ -125,31 +136,40 @@ namespace AfterworldQuestManager.ViewModels
             set => SetProperty(ref fail, value);
         }
 
-        public async void LoadItemId(int itemId)
+        public async void LoadItemId(string itemId)
         {
+
+            SaveCommandText = "Изменить";
+
+
             try
             {
+                DatabaseSingleton ds = DatabaseSingleton.GetInstance();
+                var qs = ds.db.Table<Quests>().ToList();
 
-                var item = await DataStore.GetItemAsync(itemId);
+                System.Console.WriteLine("Getting id : " + (Convert.ToInt32(itemId) - 1).ToString());
 
-                id = item.id;
-                desc = item.desc;
-                reqSuccess = item.reqSuccess;
-                reqFail = item.reqFail;
-                activeTime = item.activeTime;
-                pointsNeeded = item.pointsNeeded;
-                xp = item.xp;
-                gold = item.gold;
-                jobTime = item.jobTime;
-                other = item.other;
-                popAdd = item.other;
-                popDel = item.popDel;
-                buildingId = item.buildingId;
-                actorsRequired = item.actorsRequired;
-                actorClassId = item.actorClassId;
-                text = item.text;
-                success = item.success;
-                fail = item.fail;
+                var item = qs[Convert.ToInt32(itemId)-1];
+                //var item = await DataStore.GetItemAsync(itemId);
+
+                Id = item.id.ToString();
+                Desc = item.desc;
+                ReqSuccess = item.reqSuccess;
+                ReqFail = item.reqFail;
+                ActiveTime = item.activeTime;
+                PointsNeeded = item.pointsNeeded;
+                Xp = item.xp;
+                Gold = item.gold;
+                JobTime = item.jobTime;
+                Other = item.other;
+                PopAdd = item.other;
+                PopDel = item.popDel;
+                BuildingId = item.buildingId;
+                ActorsRequired = item.actorsRequired;
+                ActorClassId = item.actorClassId;
+                Text = item.text;
+                Success = item.success;
+                Fail = item.fail;
 
             }
             catch (Exception)

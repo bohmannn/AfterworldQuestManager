@@ -80,7 +80,7 @@ namespace AfterworldQuestManager.ViewModels
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewItemPage));
+            await Shell.Current.GoToAsync(nameof(ItemDetailPage));
         }
 
         async void OnItemSelected(Days item)

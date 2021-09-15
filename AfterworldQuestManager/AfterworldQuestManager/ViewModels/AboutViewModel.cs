@@ -49,8 +49,6 @@ namespace AfterworldQuestManager.ViewModels
                 ds.db.CreateTable<Quests>();
                 QuestsInDb = "Квестов в базе: " + ds.db.Table<Quests>().Count().ToString();
 
-                Days d = ds.db.Table<Days>().ElementAt(0);
-
 
                 var status = await Permissions.CheckStatusAsync<Permissions.StorageWrite>();
 
@@ -59,19 +57,6 @@ namespace AfterworldQuestManager.ViewModels
                     status = await Permissions.RequestAsync<Permissions.StorageWrite>();
                 }
 
-                //var cmd = new SQLiteCommand(ds.db);
-
-                //cmd.CommandText = "SELECT Count(*) FROM Quests;";
-
-
-                //ds.db.
-
-                //ds.db.Execute()
-                //var contents = connection.CreateCommand();
-
-                //SQLiteDataReader adapter = new SQLiteDataAdapter(sqlQuery, m_dbConn);
-
-                //QuestsInDb
 
             }
             catch (Exception ex)
