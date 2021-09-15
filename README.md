@@ -1,3 +1,3 @@
 # AfterworldQuestManager
 
-Simple Xamarin application for android to easily manage quests for Afterwold game. 
+Simple Xamarin application for android to easily manage quests for Afterwold game using SQLite database.
