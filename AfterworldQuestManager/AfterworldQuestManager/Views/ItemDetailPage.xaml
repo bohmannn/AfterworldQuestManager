@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AfterworldQuestManager.Views.ItemDetailPage"
+             Title="{Binding Title}">
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="15">
+        <Label Text="Id:" FontSize="Medium" />
+        <Label Text="{Binding Id}" FontSize="Small"/>
+        <Label Text="Описание:" FontSize="Medium" />
+        <Entry Text="{Binding Desc}" FontSize="Small"/>
+        <Label Text="Успешные квесты:" FontSize="Medium" />
+        <Entry Text="{Binding ReqSuccess}" FontSize="Small"/>
+        <Label Text="Провальные квесты:" FontSize="Medium" />
+        <Entry Text="{Binding ReqFail}" FontSize="Small"/>
+        <Label Text="Время на задание:" FontSize="Medium" />
+        <Entry Text="{Binding ActiveTime}" FontSize="Small"/>
+        <Label Text="Необходимое количество очков:" FontSize="Medium" />
+        <Entry Text="{Binding PointsNeeded}" FontSize="Small"/>
+        <Label Text="Даваемый опыт:" FontSize="Medium" />
+        <Entry Text="{Binding Xp}" FontSize="Small"/>
+        <Label Text="Даваемое золото:" FontSize="Medium" />
+        <Entry Text="{Binding Gold}" FontSize="Small"/>
+        <Label Text="Время работы:" FontSize="Medium" />
+        <Entry Text="{Binding JobTime}" FontSize="Small"/>
+        <Label Text="Дополнительные данные:" FontSize="Medium" />
+        <Entry Text="{Binding Other}" FontSize="Small"/>
+        <Label Text="Популяция при успехе:" FontSize="Medium" />
+        <Entry Text="{Binding PopAdd}" FontSize="Small"/>
+        <Label Text="Популяция при провале:" FontSize="Medium" />
+        <Entry Text="{Binding PopDel}" FontSize="Small"/>
+        <Label Text="Здание дающее задачу:" FontSize="Medium" />
+        <Entry Text="{Binding BuildingId}" FontSize="Small"/>
+        <Label Text="Герои необходимые для задания:" FontSize="Medium" />
+        <Entry Text="{Binding ActorsRequired}" FontSize="Small"/>
+        <Label Text="Класс героя:" FontSize="Medium" />
+        <Entry Text="{Binding ActorsRequired}" FontSize="Small"/>
+        <Label Text="Описание:" FontSize="Medium" />
+        <Entry Text="{Binding Text}" FontSize="Small"/>
+        <Label Text="Текст при успехе:" FontSize="Medium" />
+        <Entry Text="{Binding Success}" FontSize="Small"/>
+        <Label Text="Текст при провале:" FontSize="Medium" />
+        <Entry Text="{Binding Fail}" FontSize="Small"/>
+        
+    </StackLayout>
+    </ScrollView>
+</ContentPage>

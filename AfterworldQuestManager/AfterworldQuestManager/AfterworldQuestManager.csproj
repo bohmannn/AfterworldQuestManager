@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />  
+    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.41" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="UserControls\DaysGridControl.xaml.cs">
+      <DependentUpon>DaysGridControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DaysPage.xaml.cs">
+      <DependentUpon>DaysPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\QuestsPage.xaml.cs">
+      <DependentUpon>QuestsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
